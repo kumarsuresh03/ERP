@@ -12,7 +12,7 @@ pipeline {
         stage('Build Backend') {
             steps {
                 script {
-                    def backendPath = "basic-erp/backend"
+                    def backendPath = "LPU-Intership-2/basic-erp/backend"
                     if (fileExists(backendPath)) {
                         bat "docker build -t ${backendImage}:latest ${backendPath}"
                         bat "docker tag ${backendImage} sureshnangina/mern-backend:mern-backend"
@@ -28,7 +28,7 @@ pipeline {
         stage('Build Frontend') {
             steps {
                 script {
-                    def frontendPath = "basic-erp/frontend"
+                    def frontendPath = "LPU-Intership-2/basic-erp/frontend"
                     if (fileExists(frontendPath)) {
                         bat "docker build -t ${frontendImage}:latest ${frontendPath}"
                         bat "docker tag ${frontendImage} sureshnangina/mern-frontend:mern-frontend"
